@@ -19,6 +19,6 @@ public interface AppointmentsDAO extends JpaRepository<Appointment, Long>{
 	
 	//La que obtiene las citas de cierta fecha y las organiza por afiliado
 	List<Appointment> findByDateOrderByIdAffiliateAsc(LocalDate date);
-
 	
+
 }

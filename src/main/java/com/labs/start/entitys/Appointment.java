@@ -28,18 +28,14 @@ public class Appointment {
 	@DateTimeFormat(pattern = "HH:mm")
 	private LocalTime hour;
 				
-	@ManyToOne(cascade= CascadeType.MERGE)
-	@Basic(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "idTest")
 	private TestEntity idTest;
 
-	@ManyToOne(cascade= CascadeType.MERGE)
-	@Basic(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "idAffiliate")
 	private Affiliate idAffiliate;
 	
-	
-
 	@Override
 	public String toString() {
 		return "Appointment [id=" + id + ", date=" + date + ", hour=" + hour + ", idTest=" + idTest + ", idAffiliate="
