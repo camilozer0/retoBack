@@ -1,12 +1,12 @@
 package com.labs.start.entitys;
 
 import java.time.*;
-
 import javax.persistence.*;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "appointments")
@@ -27,13 +27,15 @@ public class Appointment {
 	@Column(name = "hour")
 	@DateTimeFormat(pattern = "HH:mm")
 	private LocalTime hour;
-				
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	
+	@ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.MERGE)
 	@JoinColumn(name = "idTest")
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private TestEntity idTest;
 
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.MERGE)
 	@JoinColumn(name = "idAffiliate")
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Affiliate idAffiliate;
 	
 	@Override

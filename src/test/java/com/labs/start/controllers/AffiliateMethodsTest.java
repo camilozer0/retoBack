@@ -28,9 +28,7 @@ class AffiliateMethodsTest {
 	
 	@InjectMocks
 	AffiliateMethods affMethods;
-	
-	@Captor
-	private ArgumentCaptor<Optional<Affiliate>> pruebaAff;
+
 
 	@BeforeEach
 	void setUp() throws Exception{

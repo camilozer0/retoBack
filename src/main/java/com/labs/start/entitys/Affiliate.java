@@ -2,16 +2,12 @@ package com.labs.start.entitys;
 
 import javax.persistence.*;
 
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
-
 @Entity
 @Table(name = "affiliates")
 public class Affiliate {
 
 	@Id
 	@Column(name = "idAffiliate")
-	@Cascade(value=CascadeType.DELETE)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	

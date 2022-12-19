@@ -25,9 +25,7 @@ class AppointmentMethodsTest {
 	
 	@InjectMocks
 	AppointmentMethods appMethods;
-	
-	@Captor
-	private ArgumentCaptor<Optional<Appointment>> pruebaApp;
+
 
 	@BeforeEach
 	void setUp() throws Exception{

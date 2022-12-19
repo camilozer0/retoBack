@@ -23,9 +23,7 @@ class TestMethodsTest {
 	
 	@InjectMocks
 	TestMethods testMethods;
-	
-	@Captor
-	private ArgumentCaptor<Optional<TestEntity>> prueba;
+
 	
 	@BeforeEach
 	void setUp() throws Exception {
